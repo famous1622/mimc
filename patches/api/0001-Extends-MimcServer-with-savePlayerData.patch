@@ -1,0 +1,28 @@
+From bc2d6ceba74db1fd8fa66c752580c1cbfea1d1f2 Mon Sep 17 00:00:00 2001
+From: nckk-mc <nckk-mc@myicts.be>
+Date: Mon, 5 Aug 2019 01:17:57 +0200
+Subject: [PATCH] Extends MimcServer with savePlayerData
+
+---
+ src/main/java/mimc/MimcServer.java | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+ create mode 100644 src/main/java/mimc/MimcServer.java
+
+diff --git a/src/main/java/mimc/MimcServer.java b/src/main/java/mimc/MimcServer.java
+new file mode 100644
+index 00000000..c74afaa2
+--- /dev/null
++++ b/src/main/java/mimc/MimcServer.java
+@@ -0,0 +1,9 @@
++package mimc;
++
++import org.bukkit.Server;
++import org.jetbrains.annotations.NotNull;
++
++public interface MimcServer extends Server {
++    boolean preparePlayerForMigration(@NotNull String playerName);
++    boolean savePlayerData(@NotNull String playerName);
++}
+-- 
+2.17.1
+
